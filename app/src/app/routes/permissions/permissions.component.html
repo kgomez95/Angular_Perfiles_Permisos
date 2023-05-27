@@ -1,0 +1,15 @@
+<div>
+    <h1>Permissions</h1>
+
+    <ng-template permissions [ngxPermissionsOnly]="['permissions/view']">
+        <p>Tienes el permiso "permissions/view" asignado.</p>
+    </ng-template>
+
+    <ng-template permissions [ngxPermissionsOnly]="['permissions/update']">
+        <p>Tienes el permiso "permissions/update" asignado.</p>
+    </ng-template>
+
+    <ng-template permissions [ngxPermissionsOnly]="['permissions/delete']">
+        <p>Tienes el permiso "permissions/delete" asignado.</p>
+    </ng-template>
+</div>
