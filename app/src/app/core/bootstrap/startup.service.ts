@@ -19,13 +19,14 @@ export class StartupService {
 
         // Cargamos los permisos que tendremos con nuestro usuario actual.
         // NOTE: Esto debería de obtenerse de los datos del usuario cuando nos identifiquemos en la aplicación.
-        const permissions = ['permissions/view', 'permissions/update', 'permissions/delete', 'system/view'];
+        const permissions: string[] = ['permissions/view', 'permissions/update', 'permissions/delete', 'system/view'];
         this.permissonsService.loadPermissions(permissions);
 
         // Añadimos los roles que tendremos con nuestro usuario actual.
         // NOTE: Esto debería de obtenerse de los datos del usuario cuando nos identifiquemos en la aplicación.
         this.rolesService.flushRoles();
         this.rolesService.addRoles({ admin: permissions });
+        //this.rolesService.addRolesWithPermissions({ admin: permissions });
         
         console.log("[StartupService] Fin.");
     }

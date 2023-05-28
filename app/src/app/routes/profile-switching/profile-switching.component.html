@@ -1,3 +1,34 @@
 <div>
     <h1>Profile-switching</h1>
+
+    <!-- Cambio de permisos. -->
+    <div>
+        <button (click)="addRemovePermission('permissions/view')">permissions/view</button>
+        <button (click)="addRemovePermission('permissions/update')">permissions/update</button>
+        <button (click)="addRemovePermission('permissions/delete')">permissions/delete</button>
+        <button (click)="addRemovePermission('system/view')">system/view</button>
+    </div>
+
+    <!-- Cambio de roles. -->
+    <div>
+        <button (click)="addRemoveRole('admin')">admin</button>
+        <button (click)="addRemoveRole('employee')">employee</button>
+    </div>
+
+    <!-- Listado de permisos actuales. -->
+    <div>
+        <h3>Permisos actuales:</h3>
+        <div *ngFor="let item of getPermissions() | keyvalue">
+            <p>{{item.key}}</p>
+        </div>
+    </div>
+
+    <!-- Listado de roles actuales. -->
+    <div>
+        <h3>Roles actuales:</h3>
+        <div *ngFor="let item of getRoles() | keyvalue">
+            <p>{{item.key}}</p>
+        </div>
+    </div>
+
 </div>
